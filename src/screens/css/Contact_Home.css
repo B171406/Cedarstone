@@ -1,0 +1,51 @@
+/* Contact_Home.css */
+
+.contact-home-container {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .contact-card {
+    background-color: white;
+    width: 100%;
+    max-width: 60rem;
+    height: 20rem;
+    margin: 20px 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative; /* To position the image relative to this container */
+    border-radius: 120px 50px;
+  }
+  
+  .background-image {
+    width: 8rem;
+    margin:0px 800px;
+  }
+  
+  .card-title {
+    color: black;
+    margin-top: 20px;
+  }
+  
+  .card-text {
+    color: black;
+    font-size: 15px;
+    margin-right: 20px;
+  }
+  
+  .explore-button {
+    background-color:red;
+    margin-top: 20px;
+  }
+  
+  /* Media Query for Responsive Styling */
+  @media (max-width: 768px) {
+    .contact-card {
+      max-width: 100%;
+      margin: 20px 10px;
+    }
+  
+    .card-text {
+      margin-right: 10px;
+    }
+  }
+  
