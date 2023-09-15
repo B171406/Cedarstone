@@ -35,6 +35,7 @@ export default function About() {
     backgroundColor: 'white',
     boxShadow:
       '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    padding:'20px 20px',
   };
 
   const containerStyle = {
@@ -102,7 +103,7 @@ export default function About() {
         <div style={innerContainerStyle}>
           <div className="card bg-info" style={cardStyle}>
             <div className="card-body">
-              <h1 className="card-title" style={{ color: 'black', fontSize: f1, marginTop: '-15px' }}>A Partner for Progress</h1>
+              <h1 className="card-title" style={{ color: 'black', fontSize: f1, marginTop: '-17px' }}>A Partner for Progress</h1>
               <p className="card-text" style={{ color: 'black', fontSize: f2 }}>
                 While we offer free initial support, our goal is lasting partnerships. When
                 you’re prepared for advancement, we’re here as your guiding force.
@@ -111,6 +112,7 @@ export default function About() {
               <p className="card-text" style={{ color: 'black', fontSize: f2 }}>
                 Great transformations begin with small steps. Share your challenges today,
                 paving the path to a more efficient tomorrow.
+                  <br/>
               </p>
             </div>
           </div>
