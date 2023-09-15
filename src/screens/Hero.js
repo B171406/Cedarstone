@@ -1,69 +1,74 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import bgImage from '../components/assets/bg3.webp';
+
 import '@fortawesome/fontawesome-free/css/all.css';
 
+
+
 const styles = {
+  // backgroundImage: `url(${bgImage})`,
   backgroundColor: 'white',
-  color: 'black',
-  padding: '40px 20px',
-  textAlign: 'center',
+  color: 'white',
+  padding: '80px 0',
+  textalign: 'center',
   opacity: '1',
 };
 
-const containerStyles = {
-  maxWidth: '800px',
+const k = {
+  maxwidth: '800px',
   margin: '0 auto',
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
-  alignItems: 'center',
 };
-
 export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if the screen width is less than or equal to 767 pixels
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 767);
     };
 
+    // Add event listener for window resize
     window.addEventListener('resize', handleResize);
+
+    // Initial check on component mount
     handleResize();
 
+    // Cleanup by removing event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  const fontSize = isMobile ? '24px' : '40px';
-  const font = isMobile ? '16px' : '20px';
+  // Define font size based on screen size
+  const fontSize = isMobile ? '30px' : '50px';
+  const font = isMobile ? '20px' : '25px';
 
   const imageStyle = {
-    width: '100%',
-    maxWidth: '400px', // Adjust the max width as needed
-    margin: isMobile ? '20px 0' : '0 20px', // Adjust margins for spacing
+    display: isMobile ? 'block' : 'inline', // Display the image as block in mobile view
+    width: isMobile ? '80%' : '30rem', // Set image width to 100% in mobile view
+    margin: isMobile ? '10px auto' : '0px', // Center image horizontally in mobile view
+    float: isMobile ? 'none' : 'right', // Float the image to the right in desktop view
+    marginTop: isMobile ? '0' : '-200px', // Add margin to the top in desktop view
+    marginRight: isMobile ? '0px' : '20px',
+    marginLeft: isMobile ? '55px' : '0px',
   };
 
   return (
     <div style={styles}>
-      <div style={containerStyles}>
-        <div style={{ flex: '1', minWidth: '250px' }}>
-          <img src={bgImage} alt="Background" style={imageStyle} />
-        </div>
-        <div style={{ flex: '1' }}>
-          <h1 className="card-title" style={{ fontSize }}>
-            Navigating Operational Hurdles?
-          </h1>
-          <p className="card-text" style={{ fontSize, lineHeight: '1.4', marginBottom: '20px' }}>
-            Every SME faces obstacles from inventory management to production,
-            distribution, and cost control. Cedarstone understands, and we’re
-            here to support you.
-          </p>
-          <Link to="/about" className="btn btn-primary" style={{ fontSize }}>
-            Learn More
-          </Link>
-        </div>
+      <br />
+      <div style={k}>
+        <h1 className="card-title" style={{ color: 'black', margin: '0px 61px', fontSize: fontSize }}>
+          Navigating Operational Hurdles?
+        </h1>
+        <br />
+        <p className="card-text" style={{ color: 'black', margin: '10px 61px', fontSize: font }}>
+          Every SME faces obstacles from inventory managementto production,<br/>  distribution, and cost control. Cedarstone
+          understands,  and we’re<br/> here to support you.
+        </p>
+        <Link to="/about" className="btn btn-primary" style={{ color: 'black', margin: '10px 61px' }}>
+          Learn More
+        </Link>
+        <img src={bgImage} alt="Background" style={imageStyle} />
       </div>
     </div>
   );
